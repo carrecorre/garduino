@@ -52,7 +52,9 @@ void loop() {
   h = dht.readHumidity();
   // Read temperature as Celsius (the default)
   t = dht.readTemperature();
-
+  //muestra el valor de la humedad actual aunque solo compruebe cada media hora para regar
+  soilHumidity = analogRead(SensorPin);
+  
   if (lecturas >= 900) {
     soilHumidity = checkSoil();
     lecturas = 0;
